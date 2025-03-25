@@ -23,3 +23,6 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "API_EL.dll"]
+
+EXPOSE 10000
+CMD ["dotnet", "API_EL.dll", "--urls", "http://0.0.0.0:10000"]
